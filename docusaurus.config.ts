@@ -122,8 +122,8 @@ const config: Config = {
                     title: 'Docs',
                     items: [
                         {
-                            label: '文章',
-                            to: '/docs/intro',
+                            label: '计算机基础',
+                            to: '/computer',
                         },
                     ],
                 },
