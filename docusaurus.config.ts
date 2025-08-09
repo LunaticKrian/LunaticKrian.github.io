@@ -119,16 +119,16 @@ const config: Config = {
             style: 'dark',
             links: [
                 {
-                    title: 'Docs',
+                    title: '文章',
                     items: [
                         {
                             label: '计算机基础',
-                            to: '/computer',
+                            to: '/docs/computer/intro',
                         },
                     ],
                 },
                 {
-                    title: 'Community',
+                    title: '社交',
                     items: [
                         {
                             label: '知乎',
@@ -137,7 +137,7 @@ const config: Config = {
                     ],
                 },
                 {
-                    title: 'More',
+                    title: '站点',
                     items: [
                         {
                             label: '个人博客',
