@@ -108,7 +108,7 @@ const config: Config = {
                     position: 'right',
                 },
                 {
-                    href: 'https://github.com/facebook/docusaurus',
+                    href: 'https://lunatickrian.github.io',
                     label: 'GitHub',
                     position: 'right',
                 },
