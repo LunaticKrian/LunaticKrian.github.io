@@ -89,14 +89,19 @@ const config: Config = {
                     type: 'docSidebar',
                     sidebarId: 'computerSidebar',
                     position: 'left',
-                    label: '文章',
+                    label: '所有文章',
                 },
-                // 下拉菜单
+                // 计算机理论-下拉菜单
                 {
                     type: 'dropdown',
                     label: '计算机基础理论',
                     position: 'left',
                     items: [
+                        {
+                            type: 'docSidebar',
+                            label: '数字电路',
+                            sidebarId: 'digitalCircuit',
+                        },
                         {
                             type: 'docSidebar',
                             label: '计算机组成原理',
@@ -113,6 +118,18 @@ const config: Config = {
                             sidebarId: 'computerNetwork',
                         },
                     ],
+                },
+                // 个人项目-下拉菜单
+                {
+                    type: 'dropdown',
+                    label: '个人项目',
+                    position: 'left',
+                    items: [
+                        {
+                            href: 'https://github.com/LunaticKrian/AIRC-Study-Frontend',
+                            label: '前端学习导航',
+                        }
+                    ]
                 },
                 {
                     to: '/blog',
