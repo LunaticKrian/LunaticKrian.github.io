@@ -91,16 +91,39 @@ const config: Config = {
                     position: 'left',
                     label: '文章',
                 },
+                // 下拉菜单
+                {
+                    type: 'dropdown',
+                    label: '计算机基础理论',
+                    position: 'left',
+                    items: [
+                        {
+                            type: 'docSidebar',
+                            label: '计算机组成原理',
+                            sidebarId: 'computerComposition',
+                        },
+                        {
+                            type: 'docSidebar',
+                            label: '计算机操作系统',
+                            sidebarId: 'computerOperatingSystem',
+                        },
+                        {
+                            type: 'docSidebar',
+                            label: '计算机网络',
+                            sidebarId: 'computerNetwork',
+                        },
+                    ],
+                },
                 {
                     to: '/blog',
                     label: '个人博客',
-                    position: 'left'
+                    position: 'right'
                 },
                 {
                     type: 'docSidebar',
                     label: '个人日志',
                     sidebarId: 'diarySidebar',
-                    position: 'left',
+                    position: 'right',
                 },
                 {
                     to: '/about',
