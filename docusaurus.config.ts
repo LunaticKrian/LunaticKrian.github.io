@@ -133,6 +133,12 @@ const config: Config = {
                         },
                     ],
                 },
+                {
+                    type: 'docSidebar',
+                    label: '编程语言',
+                    sidebarId: 'programSidebar',
+                    position: 'left',
+                },
                 // 个人项目-下拉菜单
                 {
                     type: 'dropdown',
@@ -183,7 +189,7 @@ const config: Config = {
             contextualSearch: true,
 
             // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
-            externalUrlRegex: 'external\\.com|domain\\.com',
+            // externalUrlRegex: 'external\\.com|domain\\.com',
 
             // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
             // replaceSearchResultPathname: {
@@ -199,8 +205,6 @@ const config: Config = {
 
             // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
             insights: false,
-
-            //... other Algolia params
         },
 
         // 页脚配置
