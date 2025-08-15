@@ -77,6 +77,20 @@ const config: Config = {
     themeConfig: {
         // Replace with your project's social card
         image: 'img/docusaurus.yaml-social-card.jpg',
+
+        // 站点元信息配置
+        metadata: [
+            {
+                name: 'keywords',
+                content: '百城, krian, blog, javascript, typescript, node, react, vue, web, 前端, 后端',
+            },
+            {
+                name: 'algolia-site-verification',
+                content: '63F97FC6198CF288'
+            }
+        ],
+
+        // 顶部导航栏
         navbar: {
             title: '百成',
             logo: {
@@ -154,6 +168,41 @@ const config: Config = {
                 },
             ],
         },
+
+        // 搜索配置
+        algolia: {
+            // The application ID provided by Algolia
+            appId: '25YYWI12TQ',
+
+            // Public API key: it is safe to commit it
+            apiKey: '79beed334109a82ef3dd8f95c6a5888d',
+
+            indexName: 'Krian Web Site',
+
+            // Optional: see doc section below
+            contextualSearch: true,
+
+            // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+            externalUrlRegex: 'external\\.com|domain\\.com',
+
+            // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+            replaceSearchResultPathname: {
+                from: '/docs/', // or as RegExp: /\/docs\//
+                to: '/',
+            },
+
+            // Optional: Algolia search parameters
+            searchParameters: {},
+
+            // Optional: path for search page that enabled by default (`false` to disable it)
+            searchPagePath: 'search',
+
+            // Optional: whether the insights feature is enabled or not on Docsearch (`false` by default)
+            insights: false,
+
+            //... other Algolia params
+        },
+
         // 页脚配置
         footer: {
             style: 'dark',
@@ -183,15 +232,17 @@ const config: Config = {
                             label: '个人博客',
                             to: '/blog',
                         },
-                        {
-                            label: 'GitHub',
-                            href: 'https://github.com/LunaticKrian',
-                        },
+                        // {
+                        //     label: 'GitHub',
+                        //     href: 'https://github.com/LunaticKrian',
+                        // },
                     ],
                 },
             ],
             copyright: `Copyright © ${new Date().getFullYear()} Krian, Inc.`,
         },
+
+        // 权限配置
         prism: {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
