@@ -52,6 +52,13 @@ const config: Config = {
                 },
                 // 博客配置
                 blog: {
+                    blogTitle: '百成 个人博客',
+                    blogDescription: '分享',
+                    postsPerPage: 1,
+
+                    blogSidebarTitle: '博客列表',
+                    blogSidebarCount: 'ALL',
+
                     showReadingTime: true,
                     feedOptions: {
                         type: ['rss', 'atom'],
@@ -93,10 +100,10 @@ const config: Config = {
         // 顶部导航栏
         navbar: {
             title: '百成',
-            logo: {
-                alt: 'My Site Logo',
-                src: 'img/logo.svg',
-            },
+            // logo: {
+            //     alt: 'My Site Logo',
+            //     src: 'img/logo.svg',
+            // },
             // 导航栏配置
             items: [
                 {
