@@ -250,7 +250,7 @@ const config: Config = {
                     ],
                 },
             ],
-            copyright: `Copyright © ${new Date().getFullYear()} Krian, Inc.`,
+            copyright: `Copyright © 2021 - ${new Date().getFullYear()} 百成 Krian.`,
         },
 
         // 权限配置
