@@ -6,7 +6,7 @@ import type * as Preset from '@docusaurus/preset-classic';
 
 // 站点配置项
 const config: Config = {
-    title: '百成',
+    title: 'LUNATIC-E 百成',
     tagline: '「没必要的事不做，必要的事尽快做」',
     favicon: 'img/favicon.ico',
 
@@ -16,7 +16,7 @@ const config: Config = {
     },
 
     // Set the production url of your site here
-    url: 'https://lunatickrian.github.io',
+    url: 'https://lunatice.com',
     // Set the /<baseUrl>/ pathname under which your site is served
     // For GitHub pages deployment, it is often '/<projectName>/'
     baseUrl: '/',
@@ -89,17 +89,21 @@ const config: Config = {
         metadata: [
             {
                 name: 'keywords',
-                content: '百城, krian, blog, javascript, typescript, node, react, vue, web, 前端, 后端',
+                content: 'lunatice, lunatic-e, 百城, krian, blog, javascript, typescript, node, react, vue, web, 前端, 后端',
             },
             {
                 name: 'algolia-site-verification',
                 content: '63F97FC6198CF288'
+            },
+            {
+                name: 'baidu-site-verification',
+                content: 'codeva-Htc2XOT9Kr'
             }
         ],
 
         // 顶部导航栏
         navbar: {
-            title: '百成',
+            title: 'LUNATIC-E 百成',
             // logo: {
             //     alt: 'My Site Logo',
             //     src: 'img/logo.svg',
@@ -175,7 +179,7 @@ const config: Config = {
                     position: 'right',
                 },
                 {
-                    href: 'https://lunatickrian.github.io',
+                    href: 'https://github.com/LunaticKrian',
                     label: 'GitHub',
                     position: 'right',
                 },
