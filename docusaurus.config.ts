@@ -108,10 +108,10 @@ const config: Config = {
         // 顶部导航栏
         navbar: {
             title: 'LUNATIC-E 百成',
-            // logo: {
-            //     alt: 'My Site Logo',
-            //     src: 'img/logo.svg',
-            // },
+            logo: {
+                alt: 'My Site Logo',
+                src: 'img/logo.png',
+            },
             // 导航栏配置
             items: [
                 // {
