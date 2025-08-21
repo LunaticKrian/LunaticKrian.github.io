@@ -73,6 +73,10 @@ const config: Config = {
                     onInlineAuthors: 'warn',
                     onUntruncatedBlogPosts: 'warn',
                 },
+                gtag: {
+                    trackingID: 'G-0C3BKNP664',
+                    anonymizeIP: true,
+                },
                 theme: {
                     customCss: './src/css/custom.css',
                 },
@@ -110,12 +114,12 @@ const config: Config = {
             // },
             // 导航栏配置
             items: [
-                {
-                    type: 'docSidebar',
-                    sidebarId: 'computerSidebar',
-                    position: 'left',
-                    label: '所有文章',
-                },
+                // {
+                //     type: 'docSidebar',
+                //     sidebarId: 'computerSidebar',
+                //     position: 'left',
+                //     label: '所有文章',
+                // },
                 // 计算机理论-下拉菜单
                 {
                     type: 'dropdown',
