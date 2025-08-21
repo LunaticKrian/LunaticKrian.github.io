@@ -167,19 +167,33 @@ const config: Config = {
                     ]
                 },
                 {
-                    to: '/blog',
-                    label: '个人博客',
-                    position: 'right'
-                },
-                {
-                    type: 'docSidebar',
-                    label: '个人日志',
-                    sidebarId: 'diarySidebar',
+                    type: 'dropdown',
+                    label: '个人记录',
                     position: 'right',
+                    items: [
+                        {
+                            to: '/blog',
+                            label: '个人博客',
+                        },
+                        {
+                            type: 'docSidebar',
+                            label: '个人日志',
+                            sidebarId: 'diarySidebar',
+                        },
+                        {
+                            to: '/resume',
+                            label: '个人简历',
+                        },
+                    ]
                 },
                 {
                     to: '/about',
                     label: '关于我',
+                    position: 'right',
+                },
+                {
+                    to: '/friendship',
+                    label: '友链',
                     position: 'right',
                 },
                 {
