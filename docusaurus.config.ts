@@ -150,6 +150,12 @@ const config: Config = {
                 },
                 {
                     type: 'docSidebar',
+                    label: '大模型工程',
+                    sidebarId: 'llmSidebar',
+                    position: 'left',
+                },
+                {
+                    type: 'docSidebar',
                     label: '编程语言',
                     sidebarId: 'programSidebar',
                     position: 'left',
@@ -163,6 +169,10 @@ const config: Config = {
                         {
                             href: 'https://github.com/LunaticKrian/AIRC-Study-Frontend',
                             label: '前端学习导航',
+                        },
+                        {
+                            href: 'https://github.com/LunaticKrian/AIRC-Study-LLM',
+                            label: '大模型学习导航',
                         }
                     ]
                 },
@@ -272,7 +282,7 @@ const config: Config = {
                     ],
                 },
             ],
-            copyright: `Copyright © 2021 - ${new Date().getFullYear()} 百成 Krian.`,
+            copyright: `Copyright © 2021 - ${new Date().getFullYear()} Lunatic-e 百成 Krian.`,
         },
 
         // 权限配置
