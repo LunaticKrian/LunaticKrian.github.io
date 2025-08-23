@@ -31,7 +31,7 @@ const FeatureList: FeatureItem[] = [
     },
     {
         title: '持续学习，持续成长',
-        Svg: require('@site/static/img/homepage-02.svg').default,
+        Svg: require('@site/static/img/homepage-03.svg').default,
         description: (
             <>
                 终生学习！看更多的风景，认识更多的人

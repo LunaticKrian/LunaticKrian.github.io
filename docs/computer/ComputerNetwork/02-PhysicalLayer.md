@@ -19,3 +19,11 @@
 
 ![img](02-PhysicalLayer.assets/3idmwv4scj.png)
 
+
+
+
+
+
+
+
+
