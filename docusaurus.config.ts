@@ -206,11 +206,11 @@ const config: Config = {
                     label: '友链',
                     position: 'right',
                 },
-                {
-                    href: 'https://github.com/LunaticKrian',
-                    label: 'GitHub',
-                    position: 'right',
-                },
+                // {
+                //     href: 'https://github.com/LunaticKrian',
+                //     label: 'GitHub',
+                //     position: 'right',
+                // },
             ],
         },
 
@@ -254,8 +254,12 @@ const config: Config = {
                     title: '文章',
                     items: [
                         {
-                            label: '计算机基础',
+                            label: '计算机体系系列',
                             to: '/docs/computer/intro',
+                        },
+                        {
+                            label: '大模型系列',
+                            to: '/docs/llm/intro',
                         },
                     ],
                 },
@@ -266,6 +270,10 @@ const config: Config = {
                             label: '知乎',
                             href: 'https://www.zhihu.com/people/lunaticer',
                         },
+                        {
+                            label: 'Github',
+                            href: 'https://github.com/LunaticKrian',
+                        },
                     ],
                 },
                 {
@@ -275,10 +283,6 @@ const config: Config = {
                             label: '个人博客',
                             to: '/blog',
                         },
-                        // {
-                        //     label: 'GitHub',
-                        //     href: 'https://github.com/LunaticKrian',
-                        // },
                     ],
                 },
             ],
