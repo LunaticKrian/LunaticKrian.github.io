@@ -1,3 +1,7 @@
+---
+sidebar_position: 2
+---
+
 # HuggingFace 核心组件
 
 目前 AI 主流开源平台：HuggingFace 和 ModelScope
