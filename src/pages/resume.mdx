@@ -5,7 +5,104 @@ description: 一段段人生旅程的记录
 hide_table_of_contents: true
 ---
 
-# RESUME
+import {Icon} from '@iconify/react';
+import {SkillItem, SectionContainer, ExpertiseInfo} from "../components/Resume";
 
----
+<div style={{
+    color: '#666666',
+    display: 'flex',
+    'justify-content': 'center',
+    'align-items': 'center',
+    'flex-direction': 'column',
+    width: 100 + '%'
+}}>
+
+    <div style={{width: 90 + '%', marginBottom: '30px'}}>
+        <div style={{
+            display: 'flex',
+            flexWrap: "wrap",
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'flex-start',
+            gap: '40px'
+        }}>
+
+            <div style={{}}>
+                <div style={{fontSize: '40px', fontWeight: 'bold'}}>百成 Krian</div>
+                <div style={{fontSize: '30px', fontWeight: '500', marginBottom: '10px'}}>全栈 LLM 研发工程师</div>
+                <ul style={{display: 'flex', flexWrap: "wrap",}}>
+                    <li style={{marginRight: '30px'}}>
+                        <span style={{fontWeight: 600}}>性别：</span>
+                        <span>男</span>
+                    </li>
+                    <li style={{marginRight: '30px'}}>
+                        <span style={{fontWeight: 600}}>现居：</span>
+                        <span>北京</span>
+                    </li>
+                    <li>
+                        <span style={{fontWeight: 600}}>工作经验：</span>
+                        <span>2年（24-25）</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div style={{
+                marginRight: '100px',
+            }}>
+                <ul style={{listStyle: 'none', padding: 0, margin: 0}}>
+                    <li style={{display: "flex", marginBottom: "10px"}}>
+                        <Icon style={{marginRight: "8px", color: "#999999"}} icon="mdi:phone-message" width="28"/>
+                        <div>
+                            <span style={{fontWeight: 600}}>手机：</span>
+                            <span>18723220402</span>
+                        </div>
+                    </li>
+                    <li style={{display: "flex", marginBottom: "10px"}}>
+                        <Icon style={{marginRight: "8px", color: "#999999"}} icon="mdi:email-edit" width="28"/>
+                        <div>
+                            <span style={{fontWeight: 600}}>邮箱：</span>
+                            <span>2020210995@stu.cqupt.edu.cn</span>
+                        </div>
+                    </li>
+                    <li style={{display: "flex", marginBottom: "10px"}}>
+                        <Icon style={{marginRight: "8px", color: "#999999"}} icon="mdi:github" width="28"/>
+                        <div>
+                            <span style={{fontWeight: 600}}>仓库：</span>
+                            <span>https://github.com/LunaticKrian</span>
+                        </div>
+                    </li>
+                    <li style={{display: "flex", marginBottom: "10px"}}>
+                        <Icon style={{marginRight: "8px", color: "#999999"}} icon="mdi:earth" width="28"/>
+                        <div>
+                            <span style={{fontWeight: 600}}>个人：</span>
+                            <span>https://www.lunatice.com</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <SectionContainer headerName="专业技能 SKILLS">
+        <SkillItem />
+    </SectionContainer>
+
+    <SectionContainer headerName="工作经历 BUSINESS">
+        <div style={{marginBottom: '20px'}}>更新中，应该不是网络卡顿未加载......</div>
+    </SectionContainer>
+
+    <SectionContainer headerName="项目经验 EXPERIENCE">
+        <div style={{marginBottom: '20px'}}>更新中，应该不是网络卡顿未加载......</div>
+    </SectionContainer>
+
+    <SectionContainer headerName="校园经历 EDUCATION">
+        <div style={{marginBottom: '20px'}}>更新中，应该不是网络卡顿未加载......</div>
+    </SectionContainer>
+
+    <SectionContainer headerName="优势特长 EXPERTISE">
+        <ExpertiseInfo/>
+    </SectionContainer>
+
+</div>
 
