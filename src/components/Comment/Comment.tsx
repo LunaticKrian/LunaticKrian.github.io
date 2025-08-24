@@ -46,11 +46,8 @@ export default function Comment(): JSX.Element {
         useColorMode().colorMode === 'dark' ? 'transparent_dark' : 'light'
 
 
-
     return (
-        <div style={{marginTop: '50px', width: '75%'}}>
-            {/*// @ts-ignore*/}
-            <Giscus {...giscus} />
-        </div>
+        // @ts-ignore
+        <Giscus {...giscus} />
     )
 }

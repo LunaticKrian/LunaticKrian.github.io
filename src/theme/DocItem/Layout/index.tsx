@@ -10,7 +10,10 @@ export default function LayoutWrapper(props: Props): ReactNode {
     return (
         <>
             <Layout {...props} />
-            <Comment/>
+            <div style={{marginTop: '50px', width: '75%'}}>
+                {/*// @ts-ignore*/}
+                <Comment/>
+            </div>
         </>
     );
 }
