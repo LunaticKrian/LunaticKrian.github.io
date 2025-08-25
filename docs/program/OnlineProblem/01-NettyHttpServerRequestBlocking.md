@@ -37,11 +37,138 @@ Spring AI：https://spring.io/projects/spring-ai#overview
 
 接着，开始对 Netty 的线程模型进行配置。
 
+第一次尝试重新注入 `WebServerFactoryCustomizer` ，但是从执行结果来看，这个配置没有生效：
+
+```java
+@Bean
+public WebServerFactoryCustomizer<NettyReactiveWebServerFactory> nettyFactoryCustomizer() {
+    NettyRuntime.setAvailableProcessors(96);
+    return factory -> factory.addServerCustomizers(
+            httpServer -> {
+                LoopResources loopResources = LoopResources.create("agent-event-loop", 8, 256, true);
+                return httpServer.runOn(loopResources);
+            });
+}
+```
+
+为什么没有生效：
+
+`WebServerFactoryCustomizer`  里用  `httpServer.runOn(loopResources)` **并没有改“全局”的 Reactor Netty 线程池** ，只会给“这个 HttpServer 实例”换一套  `LoopResources` ；而应用里依然会存在默认的全局线程池（线程名通常是  `reactor-http-*` ），所以数到的“worker 线程数”看起来没变，以为失败了。Reactor Netty 官方文档也说明：默认是共享一套全局 EventLoop，若需不同配置需显式用 `LoopResources#create`/`runOn `，它只影响该 server。
+
+
+
+**Spring Boot 服务器创建流程：**
+
+ `NettyReactiveWebServerFactory` 在构建 `HttpServer` 时，如果存在 `ReactorResourceFactory` 会先调用 `runOn(resourceFactory.getLoopResources())` 让服务器使用它管理的 `LoopResources`，然后再应用自定义器（`addServerCustomizers(...)`）。因此：
+
+- 用自定义器 `runOn(...)` 的确能给 **服务器**换一套 loops；
+- 但这**不会**改掉**全局**的 `reactor-http-*` 线程池（客户端/WebClient 等还在用全局池）。
+
+**Reactor Netty 全局线程池：**
+
+默认共享一套全局 EventLoop，工作线程数=启动时可用 CPU 数（至少 4）。可通过系统属性 `reactor.netty.ioWorkerCount` / `reactor.netty.ioSelectCount` 在**第一次初始化**时决定线程数。
+
+**`LoopResources#create(...)` 只影响被 `runOn(...)` 的实例**，不会触碰全局资源；
+
+
 
 Netty 默认是获取当前物理机的 CPU 核数 * 2作为 Worker 线程数。如果需要自定义配置的话需要重写 Netty 对于 Worker 线程数的配置。
 
-```java
+`reactor.netty.resources.LoopResources` 中定义了默认的 Netty 工作线程数：
 
+![image-20250825125557906](01-NettyHttpServerRequestBlocking.assets/image-20250825125557906.png)
+
+`reactor.netty.ReactorNetty` 中定义了【Netty 全局配置】默认值：
+
+```java
+/**
+ * Default worker thread count, fallback to available processor
+ * (but with a minimum value of 4).
+ */
+public static final String IO_WORKER_COUNT = "reactor.netty.ioWorkerCount";
+
+/**
+ * Default selector thread count, fallback to -1 (no selector thread)
+ * <p><strong>Note:</strong> In most use cases using a worker thread also as a selector thread works well.
+ * A possible use case for specifying a separate selector thread might be when the worker threads are too busy
+ * and connections cannot be accepted fast enough.
+ * <p><strong>Note:</strong> Although more than 1 can be configured as a selector thread count, in reality
+ * only 1 thread will be used as a selector thread.
+ */
+public static final String IO_SELECT_COUNT = "reactor.netty.ioSelectCount";
 ```
 
+
+
+直接配置 `reactor.netty.ioWorkerCount` 和 `reactor.netty.ioSelectCount` 两个配置项，重启服务，配置生效，修改成功！
+
+```java
+@Bean
+public ReactorResourceFactory reactorClientResourceFactory() {
+    System.setProperty("reactor.netty.ioSelectCount", "1");
+
+    // 这里工作线程数为2-4倍都可以。看具体情况
+    int ioWorkerCount = Math.max(Runtime.getRuntime().availableProcessors() * 3, 24);
+    System.setProperty("reactor.netty.ioWorkerCount", String.valueOf(ioWorkerCount));
+    return new ReactorResourceFactory();
+}
+```
+
+
+
+`ReactorResourceFactory` + 设置 `reactor.netty.ioWorkerCount`/`ioSelectCount`）之所以**生效**，是因为 Spring Boot 默认让 WebFlux 服务器**使用 `ReactorResourceFactory` 管理的资源**；而 Reactor Netty 会在**首次初始化全局资源时**读取这些系统属性来决定线程数，所以你把属性提前设好，就改变了全局线程池（于是你看到 `reactor-http-*` 的线程数变化）
+
+第一个 Bean 里调用的 `NettyRuntime.setAvailableProcessors(96)`基本不起作用：Netty 要求**在任何 Netty 组件首次初始化之前**设置可用核数，否则会被忽略/抛异常；在 Spring Boot 的生命周期里，这一步通常已经太晚。
+
+
+
+**如果你想全局统一改（服务器 + WebClient 都用同一套线程池）**，推荐用 Boot 官方的资源工厂来托管：
+
+```java
+@Bean
+public ReactorResourceFactory reactorResourceFactory() {
+    ReactorResourceFactory r = new ReactorResourceFactory();
+    r.setUseGlobalResources(false); // 不使用 Reactor 的全局资源
+    r.setLoopResourcesSupplier(() -> LoopResources.create("agent-event-loop", 8, 256, true));
+    return r;
+}
+```
+
+> 说明：`setUseGlobalResources(false)` + `setLoopResourcesSupplier(...)` 是 Spring Framework 提供的官方扩展点，用来自定义并托管 `LoopResources`，这时服务器和基于该工厂创建的客户端都会走你配置的线程池。
+
+
+
 使用 Jmeter 进行压测，首先观察 Worker 线程数是否增加。
+
+
+
+进行线程 dump，查看线程数据量：
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
