@@ -108,10 +108,10 @@ const config: Config = {
         // 顶部导航栏
         navbar: {
             title: 'LUNATICE',
-            logo: {
-                alt: 'My Site Logo',
-                src: 'img/logo.png',
-            },
+            // logo: {
+            //     alt: 'My Site Logo',
+            //     src: 'img/logo.png',
+            // },
             // 导航栏配置
             items: [
                 {
