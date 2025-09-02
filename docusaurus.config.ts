@@ -107,64 +107,64 @@ const config: Config = {
 
         // 顶部导航栏
         navbar: {
-            title: 'LUNATIC-E 百成',
+            title: 'LUNATICE',
             logo: {
                 alt: 'My Site Logo',
                 src: 'img/logo.png',
             },
             // 导航栏配置
             items: [
-                // {
-                //     type: 'docSidebar',
-                //     sidebarId: 'computerSidebar',
-                //     position: 'left',
-                //     label: '所有文章',
-                // },
-                // 计算机理论-下拉菜单
-                {
-                    type: 'dropdown',
-                    label: '计算机基础理论',
-                    position: 'left',
-                    items: [
-                        {
-                            type: 'docSidebar',
-                            label: '数字电路',
-                            sidebarId: 'digitalCircuit',
-                        },
-                        {
-                            type: 'docSidebar',
-                            label: '计算机组成原理',
-                            sidebarId: 'computerComposition',
-                        },
-                        {
-                            type: 'docSidebar',
-                            label: '计算机操作系统',
-                            sidebarId: 'computerOperatingSystem',
-                        },
-                        {
-                            type: 'docSidebar',
-                            label: '计算机网络',
-                            sidebarId: 'computerNetwork',
-                        },
-                    ],
-                },
                 {
                     type: 'docSidebar',
-                    label: '大模型工程',
-                    sidebarId: 'llmSidebar',
+                    sidebarId: 'computerSidebar',
                     position: 'left',
+                    label: '计算机基础',
                 },
+                // 计算机理论-下拉菜单
+                // {
+                //     type: 'dropdown',
+                //     label: '计算机基础理论',
+                //     position: 'left',
+                //     items: [
+                //         {
+                //             type: 'docSidebar',
+                //             label: '数字电路',
+                //             sidebarId: 'digitalCircuit',
+                //         },
+                //         {
+                //             type: 'docSidebar',
+                //             label: '计算机组成原理',
+                //             sidebarId: 'computerComposition',
+                //         },
+                //         {
+                //             type: 'docSidebar',
+                //             label: '计算机操作系统',
+                //             sidebarId: 'computerOperatingSystem',
+                //         },
+                //         {
+                //             type: 'docSidebar',
+                //             label: '计算机网络',
+                //             sidebarId: 'computerNetwork',
+                //         },
+                //     ],
+                // },
                 {
                     type: 'docSidebar',
                     label: '编程语言',
                     sidebarId: 'programSidebar',
                     position: 'left',
                 },
+                {
+                    type: 'docSidebar',
+                    label: 'AI 大模型',
+                    sidebarId: 'llmSidebar',
+                    position: 'left',
+                },
                 // 个人项目-下拉菜单
                 {
                     type: 'dropdown',
                     label: '个人项目',
-                    position: 'left',
+                    position: 'right',
                     items: [
                         {
                             href: 'https://github.com/LunaticKrian/AIRC-Study-Frontend',
