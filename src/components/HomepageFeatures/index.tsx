@@ -16,16 +16,16 @@ const FeatureList: FeatureItem[] = [
         Svg: require('@site/static/img/homepage-01.svg').default,
         description: (
             <>
-                记录408考研学习中...（闭关修炼内功）
+                408考研备战中......
             </>
         ),
     },
     {
-        title: '主要还是后端',
+        title: 'ALL IN AI',
         Svg: require('@site/static/img/homepage-02.svg').default,
         description: (
             <>
-                励志成为全栈开发的独立游戏开发者（PS：笑死 😆）
+                励志成为AI全栈的独立游戏开发者
             </>
         ),
     },
@@ -34,7 +34,7 @@ const FeatureList: FeatureItem[] = [
         Svg: require('@site/static/img/homepage-03.svg').default,
         description: (
             <>
-                终生学习！看更多的风景，认识更多的人
+                终生学习，看更多的风景，结识更多的人
             </>
         ),
     },

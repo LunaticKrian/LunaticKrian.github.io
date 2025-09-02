@@ -51,7 +51,7 @@ export default function Home(): ReactNode {
     const {siteConfig} = useDocusaurusContext();
     return (
         <Layout
-            title={`Hello from ${siteConfig.title}`}
+            title={`${siteConfig.title}`}
             description="Lunatice 百成 的个人博客，记录学习、工作、生活中的点点滴滴。">
             <HomepageHeader/>
             <main>
