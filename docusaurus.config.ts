@@ -213,6 +213,11 @@ const config: Config = {
                 // },
             ],
         },
+        // 设置文章展示导航级别
+        tableOfContents: {
+            minHeadingLevel: 2,
+            maxHeadingLevel: 5,
+        },
 
         // 搜索配置
         algolia: {

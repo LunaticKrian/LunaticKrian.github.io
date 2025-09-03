@@ -35,5 +35,3 @@
 
 
 ## 【原始问题】
-
-{original_question}
