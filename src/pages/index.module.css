@@ -1,23 +1,16 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+/*创建一个通用CSS，元素上下浮动*/
+.animationFloat {
+  animation: floatUpDown 2s ease-in-out infinite;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
+@keyframes floatUpDown {
+  0% {
+    transform: translateY(0);
   }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  50% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }

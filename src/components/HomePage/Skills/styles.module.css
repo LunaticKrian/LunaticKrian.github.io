@@ -1,0 +1,27 @@
+.skillInfoContainer {
+    display: flex;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+}
+
+.skillItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #6e7b8c;
+
+    margin-right: 18px;
+    padding: 4px;
+}
+
+.skillItem:hover {
+    background: radial-gradient(circle at center, #a3c3ff 0%, #ffffff 100%);
+    box-shadow: 0 4px 16px rgba(44, 184, 251, 0.18), 0 1.5px 4px rgba(44, 184, 251, 0.12);
+
+    border-radius: 50%;
+    color: #0061ff;
+}

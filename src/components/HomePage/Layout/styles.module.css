@@ -1,0 +1,128 @@
+.container {
+    width: 80%;
+    margin: 50px auto;
+
+    /*设置盒子弹性布局*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: row wrap;
+
+    /*左侧容器布局*/
+    .leftContent {
+        max-width: 50%;
+        min-width: 500px;
+
+        padding: 50px 20px;
+
+        .title {
+            font-size: 2.5rem;
+            font-weight: bold;
+
+            .highlight {
+                color: #0095ff;
+            }
+        }
+
+        .description {
+            margin: 20px 0;
+
+            font-size: 1rem;
+            font-weight: 600;
+            color: #6e7b8c;
+        }
+
+        .skills {
+            margin: 20px 0;
+        }
+
+        .buttonContent {
+            margin: 20px 0;
+        }
+    }
+
+    /*右侧容器布局*/
+    .rightContent {
+        width: 50%;
+        min-width: 500px;
+
+        padding: 0 10px;
+    }
+}
+
+.homeMainImg {
+    /*width: 50%;*/
+}
+
+/*按钮样式*/
+.buttonInfo {
+    min-width: 130px;
+    height: 40px;
+    color: #fff;
+    padding: 5px 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+    border-radius: 5px;
+    border: none;
+    background-color: #12affa
+}
+
+.buttonInfo:hover {
+    border-radius: 5px;
+    padding-right: 24px;
+    padding-left: 8px;
+}
+
+.buttonInfo:hover:after {
+    opacity: 1;
+    right: 10px;
+}
+
+.buttonInfo:after {
+    content: "\00BB";
+    position: absolute;
+    opacity: 0;
+    font-size: 20px;
+    line-height: 40px;
+    top: 0;
+    right: -20px;
+    transition: 0.4s;
+}
+
+/*动画出现*/
+.animateUp {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: upShow 1.5s ease-out forwards;
+}
+
+/*动画延迟出现*/
+.animateUpDelay05 {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: upShow 1s ease-out 0.5s forwards;
+}
+
+.animateUpDelay10 {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: upShow 1s ease-out 1s forwards;
+}
+
+.animateUpDelay15 {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: upShow 1s ease-out 1.5s forwards;
+}
+
+@keyframes upShow {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

@@ -163,7 +163,7 @@ const config: Config = {
                 // 个人项目-下拉菜单
                 {
                     type: 'dropdown',
-                    label: '个人项目',
+                    label: '项目',
                     position: 'right',
                     items: [
                         {
@@ -178,21 +178,21 @@ const config: Config = {
                 },
                 {
                     type: 'dropdown',
-                    label: '个人记录',
+                    label: '记录',
                     position: 'right',
                     items: [
                         {
                             to: '/blog',
-                            label: '个人博客',
+                            label: '博客',
                         },
                         {
                             type: 'docSidebar',
-                            label: '个人日志',
+                            label: '日志',
                             sidebarId: 'diarySidebar',
                         },
                         {
                             to: '/resume',
-                            label: '个人简历',
+                            label: '简历',
                         },
                     ]
                 },
