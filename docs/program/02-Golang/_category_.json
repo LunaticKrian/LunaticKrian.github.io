@@ -1,0 +1,8 @@
+{
+  "label": "Golang",
+  "position": 2,
+  "link": {
+    "type": "doc",
+    "id": "program/Golang/intro"
+  }
+}
