@@ -156,6 +156,12 @@ const config: Config = {
                 },
                 {
                     type: 'docSidebar',
+                    label: '云原生',
+                    sidebarId: 'cloudNativeSidebar',
+                    position: 'left',
+                },
+                {
+                    type: 'docSidebar',
                     label: 'AI 大模型',
                     sidebarId: 'llmSidebar',
                     position: 'left',

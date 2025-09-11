@@ -1,8 +1,18 @@
+---
+description: 操作系统 文件管理
+---
+
 # 文件管理
 
 ---
 
+## 一、文件系统基础
 
+
+
+
+
+![image](04-FileManagement.assets/202402221721760.png)
 
 
 
