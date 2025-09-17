@@ -106,7 +106,7 @@ Internet 组管理协议称为IGMP协议（Internet Group Management Protocol）
 
 
 
-
+![img_5.png](04-NetworkLayer.assets/img_5.png)
 
 
 
