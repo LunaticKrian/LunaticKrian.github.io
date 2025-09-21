@@ -28,3 +28,17 @@
   --ifm-color-primary-lightest: #61cafc;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+/* 让 Markdown 表格撑满容器宽度 */
+.markdown table {
+  width: 100%;
+  display: table;
+}
+
+/* 表格可以左右滚动，避免内容溢出 */
+.markdown table {
+  overflow-x: auto;
+  display: block;
+  white-space: nowrap;
+}
+
