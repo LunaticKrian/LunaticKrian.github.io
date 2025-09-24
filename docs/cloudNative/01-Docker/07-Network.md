@@ -100,6 +100,8 @@ docker network inspect NAME/NETWORK ID
 
 Docker 默认提供三种网络模式，分别是 `bridge`、`host` 和 `none`。还有另外两种模式： `container` 和 自定义网络模式
 
+![img_3.png](07-Network.assets/img_3.png)
+
 ### 1.bridge 模式
 
 `bridge` 模式是 Docker 默认的网络模式，也是最常用的网络模式。该模式下，Docker 会创建一个虚拟网桥（bridge），并为每个容器分配一个私有的 IP 地址，容器会连接到docker0的虚拟网桥。容器之间可以通过该虚拟网桥进行通信。
@@ -206,7 +208,12 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 --network host
 ```
 
+直接使用宿主机IP地址与外界进行通信，不再需要额外的NAT进行转换。容器将不会获取一个独立的网络命名空间（Network Namespace），而是和宿主机使用同一个网络命名空间。
+容器将不会虚拟出自己的网卡二是使用宿主机的IP和端口。
 
+![img.png](07-Network.assets/img.png)
+
+`docker`启动时指定`--network host`或`-net host`，如果还指定了`-p`映射端口，那这个时候就会有此警告，并且通过`-p`设置的参数将不会起到任何作用，端口号会以主机端口号为主，重复时则递增。
 
 ### 3.none 模式
 
@@ -224,6 +231,14 @@ lo: flags=73<UP,LOOPBACK,RUNNING>  mtu 65536
 --network container:<container_id|container_name>
 ```
 
+![img_2.png](07-Network.assets/img_2.png)
+
+注意：当指定的共享网络的容器停止或删除后，当前容器的网络也会随之停止或删除。
+
+> Alpine Linux是一款独立的、非商业的通用Linux发行版，专为追求安全性、简单性和资源效率的用户而设计。
+> 可能很多人没听说过这个Linux发行版本，但是经常用Docker的朋友可能都用过，因为他小，简单，安全而著称，所以作为基础镜像是非常好的一个选择，可谓是麻雀虽小但五脏俱全，镜像非常小巧，不到6M的大小，所以特别适合容器打包。
+
+
 ### 5.自定义网络模式
 
 Docker 还支持自定义网络模式，可以通过 `docker network create` 命令创建自定义网络。自定义网络可以使用不同的驱动程序（如 `bridge`、`overlay`、`macvlan` 等）来实现不同的网络功能。
@@ -232,9 +247,13 @@ Docker 还支持自定义网络模式，可以通过 `docker network create` 命
 docker network create --driver bridge my_bridge_network
 ```
 
-```json
+自定义网络模式，默认还是使用的 `bridge` 驱动模式。新建容器时，指定网络到自定义网络模式上：
 
+```shell
+docker run -dit --name my_container --network my_bridge_network alpine
 ```
+
+这样创建的容器实例就会加入到 `my_bridge_network` 自定义网络中（自定义网络维护了主机名和IP的映射关系），可以通过容器名（主机名）进行通信。
 
 ---
 
