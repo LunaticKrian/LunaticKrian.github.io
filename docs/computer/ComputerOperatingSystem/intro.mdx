@@ -11,7 +11,7 @@ sidebar_position: 4
 
 ---
 
-## 学习计划 Plan：
+## 学习计划 Plan
 
 （1）计算机操作系统（6.S081 Operating System Engineering）（https://pdos.csail.mit.edu/6.S081/2020/schedule.html）
 - RISC-V 微处理器（MIT 6.004）
@@ -22,6 +22,41 @@ sidebar_position: 4
 
 （3）Linux 操作系统内核
 
+---
+
+## 操作系统知识结构
+
+import MermaidChart from "../../../src/components/Mermaid";
+
+<MermaidChart mermaidData={`
+flowchart TD
+    CORE["计算机操作系统"]
+    B["进程与线程"]
+    B1["线程与进程"]
+    B2["CPU调度"]
+    B3["同步与互斥"]
+    B4["死锁"]
+    B ----> B1 & B2 & B3 & B4
+
+    C["内存管理"]
+    C1["内存管理概念"]
+    C2["虚拟内存管理"]
+    C ----> C1 & C2
+
+    D["文件管理"]
+    D1["文件系统基础"]
+    D2["目录"]
+    D3["文件系统"]
+    D ----> D1 & D2 & D3
+
+    E["输入/输出管理"]
+    E1["I/O管理概述"]
+    E2["设备独立性软件"]
+    E3["磁盘和固态硬盘"]
+    E ----> E1 & E2 & E3
+
+    CORE ----> B & C & D & E
+`}/>
 
 
 ---

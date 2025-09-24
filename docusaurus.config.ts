@@ -219,6 +219,7 @@ const config: Config = {
                 // },
             ],
         },
+
         // 设置文章展示导航级别
         tableOfContents: {
             minHeadingLevel: 2,

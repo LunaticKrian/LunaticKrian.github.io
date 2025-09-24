@@ -42,3 +42,10 @@
   white-space: nowrap;
 }
 
+/* 控制 Mermaid 图表的最大高度 */
+.mermaid {
+  max-height: 100px; /* 设置最大高度 */
+  overflow-y: auto;  /* 启用垂直滚动条 */
+}
+
+
