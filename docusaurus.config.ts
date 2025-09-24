@@ -305,7 +305,18 @@ const config: Config = {
             theme: prismThemes.github,
             darkTheme: prismThemes.dracula,
         },
+
+        // Mermaid 图表配置
+        mermaid: {
+            // theme: {light: 'neutral', dark: 'forest'},
+        },
     } satisfies Preset.ThemeConfig,
+
+    markdown: {
+        // 开启Mermaid图表语法，支持直接在MD中进行展示渲染
+        mermaid: true
+    },
+    themes: ['@docusaurus/theme-mermaid'],
 };
 
 export default config;
