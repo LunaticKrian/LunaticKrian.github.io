@@ -1,0 +1,8 @@
+{
+  "label": "Kubernetes",
+  "position": 3,
+  "link": {
+    "type": "doc",
+    "id": "cloudNative/Kubernetes/intro"
+  }
+}
