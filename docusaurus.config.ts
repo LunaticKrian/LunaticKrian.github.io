@@ -156,6 +156,12 @@ const config: Config = {
                 },
                 {
                     type: 'docSidebar',
+                    label: '架构设计',
+                    sidebarId: 'architectureSidebar',
+                    position: 'left',
+                },
+                {
+                    type: 'docSidebar',
                     label: '云原生',
                     sidebarId: 'cloudNativeSidebar',
                     position: 'left',
