@@ -95,37 +95,81 @@ Kubermetes集群中的Pod存在如下两种使用途径：
 
 **控制器**
 
-- 适用于无状态
+- **适用于无状态**
+
+![image-20250930235431409](03-CoreConcept.assets/image-20250930235431409.png)
+
+**ReplicationController（RC）**
+
+PS：已经被淘汰！
+
+**ReplicaSet（RS）**
+
+
+
+**Deployment**
+
+针对RS的更高层次的封装，提供了更丰富的部署的功能。
+
+
+
+---
+
+- **适用于有状态**
+
+**StatefulSet**
+
+![image-20251001154823195](03-CoreConcept.assets/image-20251001154823195.png)
+
+
+
+- **守护进程（DaemonSet）**
+
+![image-20251001155834402](03-CoreConcept.assets/image-20251001155834402.png)
+
+
+
+- **任务/定时任务**
 
 
 
 
 
-- 适用于有状态
+
+
+
+
+---
 
 
 
 
 
-- 守护进程
+**服务发现**
+
+![image-20251001161601589](03-CoreConcept.assets/image-20251001161601589.png)
+
+![image-20251001162748426](03-CoreConcept.assets/image-20251001162748426.png)
 
 
 
+Service
 
-
-- 任务/定时任务
-
-
+节点通信
 
 
 
-**服务防线**
+Ingress
 
 
 
 
 
 **配置与存储**
+
+
+
+
 
 
 
