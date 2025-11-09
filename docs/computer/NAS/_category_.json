@@ -1,0 +1,8 @@
+{
+  "label": "NAS 存储",
+  "position": 999,
+  "link": {
+    "type": "generated-index",
+    "description": "NAS 存储"
+  }
+}
