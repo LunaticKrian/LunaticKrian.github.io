@@ -6,46 +6,97 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #12affa;
-  --ifm-color-primary-dark: #05a1ec;
-  --ifm-color-primary-darker: #0598df;
-  --ifm-color-primary-darkest: #047eb8;
-  --ifm-color-primary-light: #2cb8fb;
-  --ifm-color-primary-lighter: #39bcfb;
-  --ifm-color-primary-lightest: #61cafc;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+    --ifm-color-primary: #12affa;
+    --ifm-color-primary-dark: #05a1ec;
+    --ifm-color-primary-darker: #0598df;
+    --ifm-color-primary-darkest: #047eb8;
+    --ifm-color-primary-light: #2cb8fb;
+    --ifm-color-primary-lighter: #39bcfb;
+    --ifm-color-primary-lightest: #61cafc;
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #12affa;
-  --ifm-color-primary-dark: #05a1ec;
-  --ifm-color-primary-darker: #0598df;
-  --ifm-color-primary-darkest: #047eb8;
-  --ifm-color-primary-light: #2cb8fb;
-  --ifm-color-primary-lighter: #39bcfb;
-  --ifm-color-primary-lightest: #61cafc;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+    --ifm-color-primary: #12affa;
+    --ifm-color-primary-dark: #05a1ec;
+    --ifm-color-primary-darker: #0598df;
+    --ifm-color-primary-darkest: #047eb8;
+    --ifm-color-primary-light: #2cb8fb;
+    --ifm-color-primary-lighter: #39bcfb;
+    --ifm-color-primary-lightest: #61cafc;
+    --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
 /* 让 Markdown 表格撑满容器宽度 */
 .markdown table {
-  width: 100%;
-  display: table;
+    width: 100%;
+    display: table;
 }
 
 /* 表格可以左右滚动，避免内容溢出 */
 .markdown table {
-  overflow-x: auto;
-  display: block;
-  white-space: nowrap;
+    overflow-x: auto;
+    display: block;
+    white-space: nowrap;
 }
 
 /* 控制 Mermaid 图表的最大高度 */
 .mermaid {
-  max-height: 100px; /* 设置最大高度 */
-  overflow-y: auto;  /* 启用垂直滚动条 */
+    max-height: 100px; /* 设置最大高度 */
+    overflow-y: auto; /* 启用垂直滚动条 */
 }
 
+/* 修改所有文章的标题大小 */
+article h1 {
+    font-size: 2rem !important;
+}
 
+article h2 {
+    font-size: 1.7rem !important;
+}
+
+article h3 {
+    font-size: 1.5rem !important;
+}
+
+article h4 {
+    font-size: 1.2rem !important;
+}
+
+article h5 {
+    font-size: 1rem !important;
+}
+
+/*!* 或者只修改博客文章的标题 *!*/
+/*.blog-post-title h1 {*/
+/*  font-size: 1rem !important;*/
+/*}*/
+
+/*!* 修改文档页面的标题 *!*/
+/*.theme-doc-markdown h1 {*/
+/*  font-size: 1rem !important;*/
+/*}*/
+
+/* 修改文章正文字符大小 */
+article {
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+/* 修改段落文字 */
+article p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* 修改博客文章正文 */
+.blog-post-content {
+    font-size: 15px;
+}
+
+/* 修改文档页面正文 */
+.theme-doc-markdown {
+    font-size: 15px;
+}
