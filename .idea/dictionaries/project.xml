@@ -2,6 +2,7 @@
   <dictionary name="project">
     <words>
       <w>jieba</w>
+      <w>krian</w>
     </words>
   </dictionary>
 </component>
