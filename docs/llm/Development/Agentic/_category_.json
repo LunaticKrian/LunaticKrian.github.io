@@ -1,8 +1,8 @@
 {
-  "label": "AI 工具",
+  "label": "Agent 开发",
   "position": 4,
   "link": {
     "type": "generated-index",
-    "description": "工具"
+    "description": "Agent 开发"
   }
 }

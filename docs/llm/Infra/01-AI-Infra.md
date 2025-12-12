@@ -5,6 +5,8 @@ description: AI Infra 基础设施
 
 # AI Infra
 
+https://github.com/Infrasys-AI/AIInfra
+
 AI Infra（AI 基础设施）是指为上层的 AI 算法应用提供支持的 AI 全栈底层技术，通过合理利用计算机体系结构，可以实现 AI 计算的加速和部署。
 
 AI Infra 主要包括以下内容：
