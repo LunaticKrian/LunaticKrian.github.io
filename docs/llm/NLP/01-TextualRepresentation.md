@@ -5,13 +5,13 @@
 创建 conda 环境
 
 ```shell
-conda create -n nlp python=3.12
+conda create -n NLP python=3.12
 ```
 
 激活虚拟环境
 
 ```shell
-conda activate nlp
+conda activate NLP
 ```
 
 依赖库：

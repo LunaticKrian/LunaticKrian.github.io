@@ -160,7 +160,7 @@ Transformer的Encoder模块由N层堆叠组成，每层包括两个子层：
 
 每个子层后都接一个残差连接（Residual Connection）和层归一化（Layer Normalization）。输入首先通过嵌入层（Embedding），然后通过位置编码（Positional Encoding）加上位置信息，再依次经过各层编码器，最终输出编码后的序列表示。
 
-![img_1.png](img_1.png) 
+![img_1.png](99-NormalQA.assets/img_1.png) 
 
 ##### Transformer中的残差结构以及意义。
 
@@ -293,7 +293,7 @@ ReAct是一个将推理（Reasoning） 和行动（Action） 相结合的Prompti
 
 这个“思考->行动->观察”的循环会持续进行，直到模型得出最终答案。ReAct模式极大地增强了模型与外部世界互动和获取实时信息的能力。
 
-![img.png](img.png)
+![img.png](99-NormalQA.assets/img.png)
 
 #### 5.什么是“指令微调”（Instruction Tuning）？它如何影响我们设计Prompt的方式？
 
@@ -347,7 +347,7 @@ RAG系统中的Prompt核心在于让模型基于检索到的上下文回答问�
 
 数据提取（分片）——向量化——创建索引——检索——排序/重排序——LLM 归纳生成。
 
-![img_2.png](img_2.png)
+![img_2.png](99-NormalQA.assets/img_2.png)
 
 
 
