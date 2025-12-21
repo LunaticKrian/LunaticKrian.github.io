@@ -69,6 +69,16 @@ article h5 {
     font-size: 1rem !important;
 }
 
+/* 强制修改 TOC 中的标题大小 */
+.title_kItE {
+    font-size: 2rem !important;
+}
+
+/* 强制修改列表卡片标题 */
+.text--truncate {
+    font-size: 1.2rem !important;
+}
+
 /*!* 或者只修改博客文章的标题 *!*/
 /*.blog-post-title h1 {*/
 /*  font-size: 1rem !important;*/
