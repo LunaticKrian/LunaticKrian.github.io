@@ -53,6 +53,21 @@ const config: Config = {
                     // Remove this to remove the "edit this page" links.
                     // editUrl:
                     //  'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+                    async sidebarItemsGenerator({defaultSidebarItemsGenerator, ...args}) {
+                        const items = await defaultSidebarItemsGenerator(args);
+                        if (args.item.dirName === 'diary' || args.item.dirName?.startsWith('diary/')) {
+                            const reverseDeep = (list: any[]): any[] =>
+                                list
+                                    .map((it) =>
+                                        it.type === 'category'
+                                            ? {...it, items: reverseDeep(it.items)}
+                                            : it,
+                                    )
+                                    .reverse();
+                            return reverseDeep(items);
+                        }
+                        return items;
+                    },
                 },
                 // 博客配置
                 blog: {
