@@ -135,10 +135,16 @@ const config: Config = {
             items: [
                 {
                     type: 'docSidebar',
-                    sidebarId: 'computerSidebar',
+                    label: 'AI Agent',
+                    sidebarId: 'llmSidebar',
                     position: 'left',
-                    label: '计算机基础',
                 },
+                // {
+                //     type: 'docSidebar',
+                //     sidebarId: 'computerSidebar',
+                //     position: 'left',
+                //     label: '计算机基础',
+                // },
                 // 计算机理论-下拉菜单
                 // {
                 //     type: 'dropdown',
@@ -167,28 +173,16 @@ const config: Config = {
                 //         },
                 //     ],
                 // },
+                // {
+                //     type: 'docSidebar',
+                //     label: '编程语言',
+                //     sidebarId: 'programSidebar',
+                //     position: 'left',
+                // },
                 {
                     type: 'docSidebar',
-                    label: '编程语言',
-                    sidebarId: 'programSidebar',
-                    position: 'left',
-                },
-                {
-                    type: 'docSidebar',
-                    label: '架构设计',
-                    sidebarId: 'architectureSidebar',
-                    position: 'left',
-                },
-                {
-                    type: 'docSidebar',
-                    label: '云原生',
+                    label: 'DevOps',
                     sidebarId: 'cloudNativeSidebar',
-                    position: 'left',
-                },
-                {
-                    type: 'docSidebar',
-                    label: 'AI 大模型',
-                    sidebarId: 'llmSidebar',
                     position: 'left',
                 },
                 // 个人项目-下拉菜单
@@ -216,15 +210,15 @@ const config: Config = {
                             to: '/blog',
                             label: '博客',
                         },
-                        {
-                            type: 'docSidebar',
-                            label: '日志',
-                            sidebarId: 'diarySidebar',
-                        },
-                        {
-                            to: '/resume',
-                            label: '简历',
-                        },
+                        // {
+                        //     type: 'docSidebar',
+                        //     label: '日志',
+                        //     sidebarId: 'diarySidebar',
+                        // },
+                        // {
+                        //     to: '/resume',
+                        //     label: '简历',
+                        // },
                     ]
                 },
                 {
@@ -232,11 +226,11 @@ const config: Config = {
                     label: '关于我',
                     position: 'right',
                 },
-                {
-                    to: '/friendship',
-                    label: '友链',
-                    position: 'right',
-                },
+                // {
+                //     to: '/friendship',
+                //     label: '友链',
+                //     position: 'right',
+                // },
                 // {
                 //     href: 'https://github.com/LunaticKrian',
                 //     label: 'GitHub',
@@ -290,14 +284,14 @@ const config: Config = {
                 {
                     title: '文章',
                     items: [
-                        {
-                            label: '计算机体系系列',
-                            to: '/docs/computer/intro',
-                        },
-                        {
-                            label: '大模型系列',
-                            to: '/docs/llm/intro',
-                        },
+                        // {
+                        //     label: '计算机体系系列',
+                        //     to: '/docs/computer/intro',
+                        // },
+                        // {
+                        //     label: '大模型系列',
+                        //     to: '/docs/llm/intro',
+                        // },
                     ],
                 },
                 {
