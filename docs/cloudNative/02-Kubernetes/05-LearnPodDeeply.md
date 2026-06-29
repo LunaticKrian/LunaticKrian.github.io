@@ -2,7 +2,56 @@
 
 ---
 
-## 一、Pod 配置文件
+## K8S 网络
+
+### Pause 容器
+
+**Pause 容器：** Pause 是 Kubernetes 里每个 Pod 中必须存在的基础容器，镜像一般是 registry.k8s.io/pause，非常轻量（几 MB），不承载业务逻辑。
+每个 Pod 启动时最先创建 Pause 容器，业务容器（Nginx、Java、Redis 等）后挂载到它的命名空间。
+
+1. Pod 内部第一个启动的容器
+2. 初始化网络栈
+3. 挂在需要的存储卷
+4. 回收僵尸进程
+
+> 什么是PID、IPC？
+> 二者都是 Linux Namespace（命名空间），是容器实现隔离的底层技术，K8s Pause 容器就是靠它们让 Pod 内容器互通。
+> PID Namespace（进程命名空间）：隔离进程 ID
+> IPC Namespace（进程间通信命名空间）：IPC = Inter-Process Communication，进程之间交换数据的几种内核机制
+> 1.消息队列 Message Queue
+> 2.共享内存 Shared Memory
+> 3.信号量 Semaphore
+> IPC Namespace 隔离后，不同命名空间的进程无法访问对方的消息队列、共享内存。
+
+CNI 标准：Kubernetes 实现容器网络通信的标准
+
+![img.png](05-LearnPodDeeply.assets/img.png)
+
+![img_1.png](05-LearnPodDeeply.assets/img_1.png)
+
+![img_2.png](05-LearnPodDeeply.assets/img_2.png)
+
+![img_3.png](05-LearnPodDeeply.assets/img_3.png)
+
+![img_4.png](05-LearnPodDeeply.assets/img_4.png)
+
+---
+
+### Calico 
+
+![img_5.png](05-LearnPodDeeply.assets/img_5.png)
+
+![img_6.png](05-LearnPodDeeply.assets/img_6.png)
+
+BGP 边际网关协议
+
+
+
+
+
+---
+
+## Pod 配置文件
 
 ```yaml
 apiVersion: apps/v1        # 1.9.0 之前的版本使用 apps/v1beta2，可通过命令 kubectl api-versions 查看
