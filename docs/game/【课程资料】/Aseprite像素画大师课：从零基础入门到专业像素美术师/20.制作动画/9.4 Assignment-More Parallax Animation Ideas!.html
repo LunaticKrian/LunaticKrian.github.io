@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .layout {
+        padding: 3.2rem 4.8rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0px auto;
+        box-sizing: border-box;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Assignment</h1>
+    <p class="layout" id="first-page"></p>
+    <h1>Instructions</h1>
+    <p class="layout" id="instruction"></p>
+    <p class="download" id="instruction_download"></p>
+    <h1>Instructor example</h1>
+    <p class="layout" id="solution"></p>
+    <p id="soulution_download"></p>
+    <script>
+      classInfo = {"first_res":{"_class":"practice","id":1517540,"is_free":false,"description":"Study the three given parallax files and generate more ideas for your next parallax project!","estimated_duration":10,"num_submissions":17},"instruction_res":{"count":2,"next":null,"previous":null,"results":[{"_class":"practice_component","id":484720,"body":"","asset":{"_class":"asset","id":52851048,"asset_type":"File","title":"Parallax Animation Files.zip","created":"2023-11-21T11:14:29Z","status":1,"captions":[],"body":"","external_url":"","is_external":false,"filename":"Parallax-Animation-Files.zip","media_license_token":null,"media_sources":[],"course_is_drmed":false,"download_urls":{"File":[{"label":"download","file":"https://att-c.udemycdn.com/2023-11-21_11-17-41-72ddf633bc163b6e8bcbc18c7446a190/original.zip?response-content-disposition=attachment%3B+filename%3DParallax%2BAnimation%2BFiles.zip&Expires=1754754898&Signature=uAiIvOws0vJv4pRMUFkAZ6C8e15rW1eCA0Ge5RuvtDFPOO89adV7ghy1CKwXJAz0dmXd4X9lfBHpISCnJphh3J5ktp0eJy74~Z5gygpL1TEDb8QeLW1~EjWJdC23~Tditas9dNFj-9BC-eAWs~eKBevieCsHEeDNdCMeY9VcE80sSVTOukMF6dgw8wAjuKNK3XXtLaGJuM9Y3AztOtajqTHZnK5c50TNPvLrIg-oDvhK42K32klyhHNlFJsfS-Fn4ORSFPydFIPBs5k57ZzKDTEwkntw2WQCAT4BUge9irpNO26QoNCsAxGG073Z12GzrpNiPq5cTrPYmpM-9raeNw__&Key-Pair-Id=K3MG148K9RIRF4"}]},"slide_urls":[],"slides":[],"stream_urls":null,"processing_errors":[]},"display_type":"download"},{"_class":"practice_component","id":484722,"body":"<p>Study the three given parallax files and generate more ideas for your next parallax project!</p>","asset":null,"display_type":"text"}]},"solution_res":{"count":1,"next":null,"previous":null,"results":[{"_class":"practice_component","id":484724,"body":"","asset":{"_class":"asset","id":52851056,"asset_type":"File","title":"Parallax Animation Files.zip","created":"2023-11-21T11:14:56Z","status":1,"captions":[],"body":"","external_url":"","is_external":false,"filename":"Parallax-Animation-Files.zip","media_license_token":null,"media_sources":[],"course_is_drmed":false,"download_urls":{"File":[{"label":"download","file":"https://att-c.udemycdn.com/2023-11-21_11-17-41-a5adb7eaf8ccfeb99ec6e0a0a0f99742/original.zip?response-content-disposition=attachment%3B+filename%3DParallax%2BAnimation%2BFiles.zip&Expires=1754754901&Signature=cxKGIsaVLpm1H2Q6tt1xhi5sw9uf41LcyEa6grAE003PMGmqaf5uTbwXB7PJujBXEf90QZSd~zGxMNNvlyfCGTSoY-OgEwxnyMNhpfGlnzHDlSoB9dq1sbU3FwR23EzqTMOSb9AacRqUqxFlQU3~lgMHabCoYWDkb89YoBB1ElpEZe9jwH9JmqyS3ugdhfAQZ5EauNhIpC-YYXQQRauHlxoGPw~oHKezt4PMXxplI~UQuOBPfKWjE0qQwx718uJm5k1cmFr4BlAQpo1B1LsF9XqhTpeDqecERYYTymI-kmW4STBd5nyiDp1wFh9WRszoucnt7QyWqDmAfHziZ7TgZw__&Key-Pair-Id=K3MG148K9RIRF4"}]},"slide_urls":[],"slides":[],"stream_urls":null,"processing_errors":[]},"display_type":"download"}]},"instructor_example_res":{"count":1,"next":null,"previous":null,"results":[{"_class":"practice_question","id":631688,"body":"<p>If our horizontal parallax scrolling canvas is 62 pixels in width, how many animation frames do we need to close the animation loop?</p>","answer":"<p>62</p>"}]}};
+      let instruction_download = classInfo.instruction_res.results.filter(n => n.display_type === 'download');
+      let instruction_text = classInfo.instruction_res.results.filter(n => n.display_type === 'text');
+      let solution_download = classInfo.solution_res.results.filter(n => n.display_type === 'download');
+      console.log(instruction_download);
+      document.querySelector('#first-page').innerHTML = classInfo.first_res.description;
+      if (instruction_download.length > 0)
+        document.querySelector('#instruction_download').innerHTML = `${instruction_download.map(n => `<p>Assignment-${n.asset.title}</p>`).join()}`;
+      document.querySelector('#instruction').innerHTML = instruction_text[0].body;
+      if (solution_download.length > 0)
+        document.querySelector('#soulution_download').innerHTML = `${solution_download.map(n => `<p>Soulution-${n.asset.title}</p>`).join()}`;
+      document.querySelector('#solution').innerHTML = classInfo.instructor_example_res.results.map(n => `<div>${n.body}${n.answer}</div>`);
+    </script>
+    <div class="layout">
+      <h2></h2>
+      <p></p>
+    </div>
+  </body>
+</html>

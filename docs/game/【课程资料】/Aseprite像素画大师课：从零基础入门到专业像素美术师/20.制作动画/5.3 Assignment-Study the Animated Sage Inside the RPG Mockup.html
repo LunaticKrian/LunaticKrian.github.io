@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .layout {
+        padding: 3.2rem 4.8rem;
+        word-break: break-word;
+        max-width: 86rem;
+        margin: 0px auto;
+        box-sizing: border-box;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Assignment</h1>
+    <p class="layout" id="first-page"></p>
+    <h1>Instructions</h1>
+    <p class="layout" id="instruction"></p>
+    <p class="download" id="instruction_download"></p>
+    <h1>Instructor example</h1>
+    <p class="layout" id="solution"></p>
+    <p id="soulution_download"></p>
+    <script>
+      classInfo = {"first_res":{"_class":"practice","id":1517528,"is_free":false,"description":"Study the animated sage inside the RPG mockup.","estimated_duration":10,"num_submissions":18},"instruction_res":{"count":2,"next":null,"previous":null,"results":[{"_class":"practice_component","id":484710,"body":"","asset":{"_class":"asset","id":52850760,"asset_type":"File","title":"Animated RPG Game Mockup.aseprite","created":"2023-11-21T10:51:18Z","status":1,"captions":[],"body":"","external_url":"","is_external":false,"filename":"Animated-RPG-Game-Mockup.aseprite","media_license_token":null,"media_sources":[],"course_is_drmed":false,"download_urls":{"File":[{"label":"download","file":"https://att-c.udemycdn.com/2023-11-21_10-52-13-7559c2f85f5b7245eb3c890e84035c1d/original.aseprite?response-content-disposition=attachment%3B+filename%3DAnimated%2BRPG%2BGame%2BMockup.aseprite&Expires=1754754876&Signature=i3KsDc1mV4Dy7Lw63aFBr6QabmUFDNJJ8kmTdnsrrMNuBNG1odYbh6OhvXEsYo-HFCVI821qEq47kqoiDLcG2vvAn03HHuIwcic4GiUw~6eraEtm9bOtkBStD0aeq~XGt0~HZuhwiMoQg6rn7xJ1m4rwQbpQ8mAfbqkDSJx5FovPYkXx9varSFalkyvYmaAOSg9UFIUQUOpgr0hUKeKB42wC1~BdPU~cWQCafPtGChHuiqP7uCa6Fp3K2Dc3VF1XuLk2CyxBt-3Y9RPH4ki-C951fC5eJbjzCTrbB3~Nmcodf8~~h7~74ephMDi35HJInDtwziOrt4-Oy7nKjKX7sQ__&Key-Pair-Id=K3MG148K9RIRF4"}]},"slide_urls":[],"slides":[],"stream_urls":null,"processing_errors":[]},"display_type":"download"},{"_class":"practice_component","id":484712,"body":"<p>I've put our animated sage into the RPG mockup in the attached solution file. </p><p>Download the solution file and study it for your reference. See how it works and try to rebuild it whenever you feel ready.</p>","asset":null,"display_type":"text"}]},"solution_res":{"count":1,"next":null,"previous":null,"results":[{"_class":"practice_component","id":484708,"body":"","asset":{"_class":"asset","id":52850602,"asset_type":"File","title":"Animated RPG Game Mockup.aseprite","created":"2023-11-21T10:40:43Z","status":1,"captions":[],"body":"","external_url":"","is_external":false,"filename":"Animated-RPG-Game-Mockup.aseprite","media_license_token":null,"media_sources":[],"course_is_drmed":false,"download_urls":{"File":[{"label":"download","file":"https://att-c.udemycdn.com/2023-11-21_10-42-32-bf23ca57a2c1f61cc5a45a88a3c87a58/original.aseprite?response-content-disposition=attachment%3B+filename%3DAnimated%2BRPG%2BGame%2BMockup.aseprite&Expires=1754754883&Signature=b7EoXMnVj0t~gbTMRwEHEMrZ75JSSOG-9hiIaIAgT-3LVaqGKXcXZ3G52OHYSnnssZJSQfBX9mqJrXuaR9Gu1-OgqygiU3o6qsWnBvJLTR6gPDW~ZdAMh-9-4JDBoLGjTTSIX7dbqlt1f0-sFHiHkt1Tm4BJPzETfXnIwqnf9pFdTIXrEj39sTpC1ro3RWy8SAw3l-nRUs4HA5ZQy4z-YKNkFaLkUtk07bhD2GmKI09pEtl3-lFx43zYjtaghjE35HodD4COo4CapN-Hc8bpwx8kU59ESnw~u4bQMhCejFVq5XkEsYO0VR2p4ehyNFX-PDhwwTZM0Cj3uHhMMXPKQg__&Key-Pair-Id=K3MG148K9RIRF4"}]},"slide_urls":[],"slides":[],"stream_urls":null,"processing_errors":[]},"display_type":"download"}]},"instructor_example_res":{"count":1,"next":null,"previous":null,"results":[{"_class":"practice_question","id":631682,"body":"<p>The sage spreads his arms wide and triggers airwaves. What is the name of this animation technique?</p>","answer":"<p>Smearing</p>"}]}};
+      let instruction_download = classInfo.instruction_res.results.filter(n => n.display_type === 'download');
+      let instruction_text = classInfo.instruction_res.results.filter(n => n.display_type === 'text');
+      let solution_download = classInfo.solution_res.results.filter(n => n.display_type === 'download');
+      console.log(instruction_download);
+      document.querySelector('#first-page').innerHTML = classInfo.first_res.description;
+      if (instruction_download.length > 0)
+        document.querySelector('#instruction_download').innerHTML = `${instruction_download.map(n => `<p>Assignment-${n.asset.title}</p>`).join()}`;
+      document.querySelector('#instruction').innerHTML = instruction_text[0].body;
+      if (solution_download.length > 0)
+        document.querySelector('#soulution_download').innerHTML = `${solution_download.map(n => `<p>Soulution-${n.asset.title}</p>`).join()}`;
+      document.querySelector('#solution').innerHTML = classInfo.instructor_example_res.results.map(n => `<div>${n.body}${n.answer}</div>`);
+    </script>
+    <div class="layout">
+      <h2></h2>
+      <p></p>
+    </div>
+  </body>
+</html>
